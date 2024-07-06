@@ -24,12 +24,12 @@ public class PrincipalFacturadetalle {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext ("ApplicationContext.xml");//esete es el contenedor
 		Facturadetalle FacturadetalleDAO = context.getBean("facturadetalleDAOImpl",Facturadetalle.class);
 		FacturaDAO facturaDAO=context.getBean("facturaDAOImpl",FacturaDAO.class);
-		Libro libroDAO=context.getBean("libroDAOImpl",LibroDAO.class);
+		LibroDAO libroDAO=context.getBean("libroDAOImpl",LibroDAO.class);
 		//CRUD CREEATE READ UPDATE Y DELETE
 		//add
-		Facturadetalle factura = new Factura (0,"FAC-0090",new Date(),23.36,5.36,30.68);
-		factura.setCliente(clienteDAO.findOne(2));
-		facturaDAO.add(factura);
+		Facturadetalle facturadetalle = new Facturadetalle ();
+		Facturadetalle.setFactura(facturaDAO.findOne(2));
+		FacturadetalleDAO.add(facturadetalle);
 		
 		//UPDATE ACTUALIZADO
 		
