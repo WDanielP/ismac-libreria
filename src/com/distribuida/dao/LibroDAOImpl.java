@@ -1,4 +1,5 @@
 package com.distribuida.dao;
+
 import java.util.List;
 
 import javax.transaction.Transactional;

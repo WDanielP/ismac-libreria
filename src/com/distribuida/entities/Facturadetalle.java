@@ -1,15 +1,36 @@
 package com.distribuida.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
+
 @Component
+@Entity
+@Table(name= "facturadetalle")
 public class Facturadetalle {
-	
+	//@OneToOne
+	//@ManyToOne
+	//@OneToMany
+	@Id
+	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private int idfacturadetalle;
 	private int cantidad;
 	private Double subtotal;
-	private Factura factura;
-	private Libro libro;
+
+	@JoinColumn(name ="id_factura")
+	@ManyToOne(cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})//persisten y detach viene asocado con una insercion de dats
+	private Factura factura;																			//refressh marge 
+	@JoinColumn(name ="id_libro")
+	@ManyToOne(cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})//persisten y detach viene asocado con una insercion de dats
+	private Libro libro;	
 	
 	public Facturadetalle() {
 		

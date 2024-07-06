@@ -8,27 +8,26 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.hibernate.query.Query;
-import com.distribuida.entities.Factura;
+import com.distribuida.entities.Facturadetalle;
 @Repository
-public class FacturadetalleDAOImpl implements FacturaDAO {
+public class FacturadetalleDAOImpl implements FacturadetalleDAO {
 	
 	
 	
-	//SELECT *FROM Factura --->>SQL
-	//from Factura  --->>HQL
-	//SELECT cl.* FROM Factura AS cl --->>> SQL
-	//SELECT CL FROM Factura cl  ----HQL
+	//SELECT *FROM Facturadetalle --->>SQL
+	//from Facturadetalle  --->>HQL
+	//SELECT cl.* FROM Facturadetalle AS cl --->>> SQL
+	//SELECT CL FROM Facturadetalle cl  ----HQL
 	@Autowired
 	private SessionFactory sessionFactory;
 	@Override
 	@Transactional
 	////ACTUALIZACION
-	public List<Factura> findAll(){
+	public List<Facturadetalle> findAll(){
 		//
 		Session session = sessionFactory.getCurrentSession();
 		
-		return session.createQuery("from Factura",Factura.class).getResultList();
+		return session.createQuery("from Facturadetalledetalle",Facturadetalle.class).getResultList();
 		
 	}
 	
@@ -36,25 +35,25 @@ public class FacturadetalleDAOImpl implements FacturaDAO {
 
 	@Override
 	@Transactional
-	public Factura findOne(int id) {
+	public Facturadetalle findOne(int id) {
 		// TODO Auto-generated method stub
 		Session session =sessionFactory.getCurrentSession();
-		return session.get(Factura.class,id);
+		return session.get(Facturadetalle.class,id);
 	}
 
 	@Override
 	@Transactional
-	public void add(Factura factura) {
+	public void add(Facturadetalle Facturadetalle) {
 	Session session=sessionFactory.getCurrentSession();	// TODO Auto-generated method stub
-	session.saveOrUpdate(factura);
+	session.saveOrUpdate(Facturadetalle);
 	
 	}
 
 	@Override
 	@Transactional
-	public void up(Factura factura) {
+	public void up(Facturadetalle Facturadetalle) {
 		Session session=sessionFactory.getCurrentSession();	// TODO Auto-generated method stub
-		session.saveOrUpdate(factura);
+		session.saveOrUpdate(Facturadetalle);
 		// TODO Auto-generated method stub
 
 	}
