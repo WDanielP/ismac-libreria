@@ -7,9 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.distribuida.dao.AutorDAO;
 import com.distribuida.entities.Autor;
 
-public class PrincipalAutor {
-	
-	
+public class PrincipalAutor {	
 	
 
 	public static void main(String[] args) {
