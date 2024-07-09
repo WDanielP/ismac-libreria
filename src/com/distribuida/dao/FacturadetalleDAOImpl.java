@@ -27,7 +27,7 @@ public class FacturadetalleDAOImpl implements FacturadetalleDAO {
 		//
 		Session session = sessionFactory.getCurrentSession();
 		
-		return session.createQuery("from Facturadetalledetalle",Facturadetalle.class).getResultList();
+		return session.createQuery("from Facturadetalle",Facturadetalle.class).getResultList();
 		
 	}
 	
