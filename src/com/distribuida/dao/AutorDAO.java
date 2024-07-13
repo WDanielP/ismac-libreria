@@ -9,8 +9,8 @@ import com.distribuida.entities.Autor;
 
 public interface AutorDAO {
 
-
 public List<Autor>findAll();
+
 public Autor findOne (int id);
 public void add(Autor autor);
 public void up (Autor autor);

@@ -31,7 +31,15 @@ public class PrincipalAutor {
 		//del
 		//autorDAO.del(40);
 		//findOne
-		System.out.println("************DEL*******"+autorDAO.findOne(40));
+		try {
+			System.out.println("************DEL*******"+autorDAO.findOne(59));
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	
 		//findAll
 		//List<Autor> Autors= AutorDAO.findAll();	
 		autorDAO.findAll().forEach(item -> {System.out.println(item.toString());});
